@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="bg-dark background-dark">
       
-      <h3 className="text-light sticky-top font" style={{ zIndex: 999 }}>
+      <h3 className="text-light font">
       <TypeAnimation 
       sequence={[
         'HuskyHive.',
