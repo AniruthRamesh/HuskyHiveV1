@@ -11,14 +11,17 @@ function App() {
   const [mobileNumber,setMobileNumber] = useState("")
   const [gig,setGig] = useState("")
   const [cost,setCost] = useState("")
+  const [dataSent,setDataSent] = useState(false)
 
   const handleSubmit = async (e)=>{
     e.preventDefault();
     console.log(name,email,mobileNumber,gig,cost)
     
     
-    const response = await axios.post("http://localhost:4000/api/gigs",{Name:name,emailid:email,mobileno:mobileNumber,gig:gig,cost:cost})
-    console.log(response)
+    const response = await axios.post("https://huskyhiveserver.onrender.com/api/gigs",{Name:name,emailid:email,mobileno:mobileNumber,gig:gig,cost:cost})
+    if(response.status==200){
+      setDataSent(true)
+    }
   }
 
 
@@ -44,7 +47,10 @@ function App() {
       </h3>
       <div style={{backgroundColor:"black"}}>
       <div className="row justify-content-center text-light">
-        <div className="col-md-6 mt-4">
+        {dataSent?<>
+        <div className="container"><span className="container">data sent sucessfully, Refresh page to submit again</span></div>
+        </>:<>
+          <div className="col-md-6 mt-4">
           <form>
             <div className="mb-3">
               <label htmlFor="name" className="form-label">
@@ -84,6 +90,7 @@ function App() {
             <button type="button" className="btn btn-primary" onClick={handleSubmit}>Submit</button>
           </form>
         </div>
+        </>}
       </div>
     </div>
     </div>
