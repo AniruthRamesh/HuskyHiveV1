@@ -57,35 +57,35 @@ function App() {
                 <ion-icon icon={person} className="me-2"></ion-icon>
                  <span> Name</span>
               </label>
-              <input type="text" className="form-control" id="name" name="name" value={name}  onChange={e=>setName(e.target.value)}/>
+              <input type="text" className="form-control" id="name" name="name" value={name}  onChange={e=>setName(e.target.value)} required/>
             </div>
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
                 <ion-icon icon={mail} className="me-2"></ion-icon>
                 <span> Email</span>
               </label>
-              <input type="email" className="form-control" id="email" name="email"  value={email} onChange={e=>setEmail(e.target.value)} />
+              <input type="email" className="form-control" id="email" name="email"  value={email} onChange={e=>setEmail(e.target.value)} required />
             </div>
             <div className="mb-3">
               <label htmlFor="mobile" className="form-label">
                 <ion-icon icon={call} className="me-2"></ion-icon>
                 <span> Mobile Number</span>
               </label>
-              <input type="tel" className="form-control" id="mobile" name="mobile"  value={mobileNumber} onChange={e=>setMobileNumber(e.target.value)} />
+              <input type="tel" className="form-control" id="mobile" name="mobile"  value={mobileNumber} onChange={e=>setMobileNumber(e.target.value)} required />
             </div>
             <div className="mb-3">
               <label htmlFor="gig" className="form-label">
               <ion-icon name="ticket-outline"></ion-icon>
                 <span> What's your Gig</span>
               </label>
-              <textarea className="form-control" id="gig" name="gig" rows="3"  value={gig} onChange={e=>setGig(e.target.value)}></textarea>
+              <textarea className="form-control" id="gig" name="gig" rows="3"  value={gig} onChange={e=>setGig(e.target.value)} required></textarea>
             </div>
             <div className="mb-3">
               <label htmlFor="cost" className="form-label">
                 <ion-icon icon={logoUsd} className="me-2"></ion-icon>
                 <span> Cost</span>
               </label>
-              <input type="number" className="form-control" id="cost" name="cost"  value={cost} onChange={e=>setCost(e.target.value)} />
+              <input type="number" className="form-control" id="cost" name="cost"  value={cost} onChange={e=>setCost(e.target.value)} required />
             </div>
             <button type="button" className="btn btn-primary" onClick={handleSubmit}>Submit</button>
           </form>
